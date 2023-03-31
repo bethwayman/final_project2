@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
+    <html lang="en"></html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>finalproject2</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"/>
-    <script defer src="/C:\Users\bethw\Desktop\code_louisville\web_dev_thur\final_project2\fontawesome-free-6.4.0-desktop/js/brands.js"></script>
-    <script defer src="/C:\Users\bethw\Desktop\code_louisville\web_dev_thur\final_project2\fontawesome-free-6.4.0-desktop/js/solid.js"></script>
-    <script defer src="/C:\Users\bethw\Desktop\code_louisville\web_dev_thur\final_project2\fontawesome-free-6.4.0-desktop/js/fontawesome.js"></script>
+    <script src="https://kit.fontawesome.com/c38ffa3fe5.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
     <!-- login-form -->
     <header class="header">
-        <form class="login-form">
+        <form class="login-form" action="https://formbold.com/s/3wvE8" method="POST">
             <input id="username" type="type" name="username" placeholder="Username" required/>
             <p id="username-err">Please enter a valid Username</p>
             <input id="password" type="password" name="password" placeholder="Password" required/>
@@ -45,7 +42,7 @@
                     <a href="#services" class="navbar__links" id="services-page">Services</a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="#sign-up" class="button" id="signup">Sign Up</a>
+                    <a href="#sign-up" class="button" id="sign-up">Sign Up</a>
                 </li>
             </ul>
         </div>
@@ -59,6 +56,7 @@
             <button class="main__btn"><a href="#">Explore</a></button>
         </div>
     </div>
+
     <!--About Section-->
     <div class="main" id="about">
         <div class="main__container">
@@ -119,14 +117,59 @@
     <!-- Contact Info-->
     <section id="contact">
         <h1 class="headings">Contact</h1>
-            <form action="https://formbold.com/s/6lDeK" method="POST" class="form">
-                <input type="text" name="name" class="input" placeholder="Enter Your Name">
-                <input type="email" name="email" class="input" placeholder="Enter Your Email">
-                <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
-                <input type="submit" value="submit" value="SEND" id="send">
-            </form>
+        <form action="https://formbold.com/s/oaPXq" method="POST" class="form">
+            <input type="text" name="name" class="input" placeholder="Enter Your Name">
+            <input type="email" name="email" class="input" placeholder="Enter Your Email">
+                <textarea name="msg" id="msg" cols="30" rows="10" placeholder="What is your favorite color?"></textarea>
+            <input type="submit" value="submit" value="SEND" id="send">
+        </form>
     </section>
 
+    <!-- Graph-->
+    <section id="graph">
+        <div style="width: 600px; height: 100%;">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <script>
+
+            let labels = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink'];
+        
+            let itemData = ['0', '0', '0', '1', '1', '2', '1'];
+        
+            const data = {
+              labels: labels,
+              datasets: [{
+                data: itemData,
+                backgroundColor: ['rgb(255,0,0)', 'rgb(255,165,0)', 'rgb(255,255,0)', 'rgb(0,128,0)', 'rgb(0,0,255)', 'rgb(128,0,128)', 'rgb(255,192,203)']
+              }]
+            };
+        
+            const config = {
+              type: 'bar',
+              data: data,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false
+                  },
+                  title: {
+                    display: true,
+                    text: 'Favorite Colors'
+                  }
+                }
+              }
+            };
+        
+            const chart = new Chart(
+              document.getElementById('myChart'),
+              config
+            );
+        
+        </script>
+
+    </section>
+        
     <!-- Footer Section -->
     <div class="footer__container">
         <div class="footer__links">
@@ -185,7 +228,8 @@
             </div>
         </section>
     </div>
-
+    
     <script src="app.js"></script>
+
 </body>
 </html>

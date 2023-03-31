@@ -17,9 +17,8 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100px;
-    z-index: 1;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1349px;
 }
 
 .login-form {
@@ -28,6 +27,8 @@
     justify-content: center;
     align-items: center;
     padding: 5px;
+    width: 100%;
+    max-width: 1349px;
     
 }
 
@@ -655,6 +656,17 @@
 #send:hover{
     cursor: pointer;
     box-shadow: 0 0 10px white;
+}
+
+/* Graph Section*/
+#graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.9);
+    columns: white;
+    padding: 20px;
 }
 
 /* Footer CSS */
